@@ -1,0 +1,8 @@
+import { expect, test } from "vitest";
+import { getFutureDate } from "./get-future-date";
+
+test('increases 1 year to the date', () => {
+    const year = new Date().getFullYear() + 1;
+
+    expect(getFutureDate(`${year}-08-10`).getFullYear()).toEqual(2023);
+});
