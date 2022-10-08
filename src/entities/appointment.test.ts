@@ -28,3 +28,16 @@ test('cannot create an appointment with an end date before the start date', () =
         });
     }).toThrow();
 });
+
+test('cannot create an appointment in the past', () => {
+    const startsAt = new Date('1979-23-12');
+    const endsAt = getFutureDate('2021-01-01');
+
+    expect(() => {
+        return new Appointment({
+            customer: 'John Doe',
+            startsAt: startsAt,
+            endsAt: endsAt,
+        });
+    }).toThrow();
+});
