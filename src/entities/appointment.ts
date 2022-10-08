@@ -23,8 +23,12 @@ export class Appointment {
 
         const { startsAt, endsAt } = props;
 
+        if (startsAt <= new Date()) {
+            throw new Error('Start date cannot be in the past');
+        }
+
         if(startsAt >= endsAt) {
-            throw new Error("Start date must be before end date");
+            throw new Error('Start date must be before end date');
         }
         this.props = props;
     }
