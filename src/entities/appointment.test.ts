@@ -30,7 +30,7 @@ test('cannot create an appointment with an end date before the start date', () =
 });
 
 test('cannot create an appointment in the past', () => {
-    const startsAt = new Date('1979-23-12');
+    const startsAt = new Date('1979-01-01');
     const endsAt = getFutureDate('2021-01-01');
 
     expect(() => {
